@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diabetes Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <div>
+        <h1>Diabetes Tracker</h1>
+
+        <form id="sugarForm" class="space-y-4">
+            <div>
+                <label class="block font-medium">Blood Sugar Level (mg/dL):</label>
+                <input type="number" id="sugarLevel" required />
+            </div>
+            <div>
+                <label class="block font-medium">Measurement Time:</label>
+                <select id="timeType">
+                    <option>Before Meal</option>
+                    <option>After Meal</option>
+                    <option>Fasting</option>
+                    <option>Before Bed</option>
+                </select>
+            </div>
+            <div>
+                <label class="block font-medium">Date & Time:</label>
+                <input type="datetime-local" id="sugarDate" />
+            </div>
+            <button type="submit">Add Entry</button>
+        </form>
+
+
+        <div id="message"></div>
+
+
+        <h2>🧾 Recent Readings:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Level (mg/dL)</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody id="historyTable"></tbody>
+        </table>
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>

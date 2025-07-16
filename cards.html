@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>daily tip</title>
+</head>
+
+<body class="body">
+    <div class="flip-card" onclick="flipCard()">
+        <div class="flip-card-inner" id="cardInner">
+            <div class="flip-card-front" style="margin-top: 60%;">
+                <h3>Medical advice today</h3>
+                <p>Click to view the tip</p>
+            </div>
+            <div class="flip-card-back" style="margin-top: 60%; text-align: center;">
+                <p id="tipText"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+                const tips = [
+            "Drink 8 glasses of water a day to stay active.",
+            "Eat a balanced diet rich in fruits and vegetables.",
+            "Get enough sleep, at least 7 hours.",
+            "Walk 30 minutes daily to improve heart health.",
+            "Wash your hands frequently to reduce the risk of infection.",
+            "Reduce sugar intake to maintain your weight and dental health.",
+            "Have a protein-rich breakfast to start your day with energy."
+        ];
+
+        function showRandomTip() {
+            const randomTip = tips[Math.floor(Math.random() * tips.length)];
+            document.getElementById("tipText").textContent = randomTip;
+        }
+
+        function flipCard() {
+            const card = document.querySelector('.flip-card');
+            card.classList.toggle('flipped');
+        }
+
+        window.onload = showRandomTip;
+    </script>
+</body>
+
+</html>
